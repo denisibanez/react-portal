@@ -6,7 +6,7 @@ import ButtonComponent from './components/button/Button';
 
 import './App.css';
 
-const App: React.FC<undefined> = () => {
+const App: React.FC = () => {
   const [count, setCount] = useState(0);
 
   return (
@@ -36,4 +36,3 @@ const App: React.FC<undefined> = () => {
 };
 
 export default App;
-
