@@ -6,10 +6,10 @@ interface ButtonProps {
   children: ReactNode
 }
 
-
+const teste = '';
 const ButtonComponent: React.FC<ButtonProps> = ({ onClick, children }) => {
   return (
-    <button className="button" onClick={onClick}>
+        <button className="button" onClick={onClick}>
       {children}
     </button>
   );
