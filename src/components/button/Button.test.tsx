@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import ButtonComponent from './Button';
 
 test('renders learn react link', () => {
-  render(<ButtonComponent />);
+  render(<ButtonComponent onClick={() => {}} children={undefined} />);
   const linkElement = screen.getByText(/Cont/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(linkElement).toBeTruthy();
 });
