@@ -11,7 +11,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:prettier/recommended",
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', '*.test.tsx'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh',"react", "react-hooks", "@typescript-eslint"],
   rules: {
@@ -19,6 +19,11 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    "react/display-name": "off",
+    'react/jsx-no-target-blank': 'off',
+    'react/no-direct-mutation-state': 'off',
+    'react/prop-types': 'off',
+    'react/require-render-return': 'off'
   },
   settings: {
     react: {

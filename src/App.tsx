@@ -1,11 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react';
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
 import ButtonComponent from './components/button/Button';
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import './App.css';
+
+const App: React.FC<undefined> = () => {
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -30,7 +32,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
