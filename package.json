@@ -23,6 +23,7 @@
     "@mui/types": "^7.2.13",
     "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.19",
     "@types/node-sass": "^4.11.7",
     "axios": "^1.6.7",
     "eslint-config-prettier": "^9.1.0",

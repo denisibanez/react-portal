@@ -20,6 +20,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     "react/display-name": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
     'react/jsx-no-target-blank': 'off',
     'react/no-direct-mutation-state': 'off',
     'react/prop-types': 'off',
