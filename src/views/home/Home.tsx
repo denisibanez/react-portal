@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // Store
 import { useSelector, useDispatch } from 'react-redux';
-import { addPost } from '../../store/reducers/example/example.store';
+import { addPost } from '@/store/reducers/example/example.store';
 
 // Components
 import { Button } from '@mui/material';
@@ -18,11 +18,7 @@ import viteLogo from '@/assets/vite.svg';
 
 const Home: React.FC = () => {
   const [count, setCount] = useState(0);
-  const [data, setData] = useState([
-    {
-      name: '',
-    },
-  ]);
+  const [data, setData] = useState([]);
   // Store
   const postsSt = useSelector((state) => state.posts);
   const dispatch = useDispatch();
@@ -50,22 +46,15 @@ const Home: React.FC = () => {
   };
 
   useEffect(() => {
-    getData();
+    // if you need get data in created component
+    // getData();
   }, []);
 
   return (
     <>
       <div>
-        {data.map((item, index) => (
-          <div key={index}>{item?.name}</div>
-        ))}
-
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <img src={viteLogo} className="logo" alt="Vite logo" />
+        <img src={reactLogo} className="logo react" alt="React logo" />
       </div>
       <h1>Vite + React</h1>
       <div className="card">
@@ -73,18 +62,43 @@ const Home: React.FC = () => {
         <ButtonComponent onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </ButtonComponent>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      Store
-      {postsSt.map((item, index) => (
-        <div key={index}>{item}</div>
-      ))}
-      <button onClick={handleClickPost}>Click</button>
+
+      <div>
+        <h1>Store</h1>
+        {postsSt.map((item, index) => (
+          <div key={index}>{item}</div>
+        ))}
+        <ButtonComponent onClick={handleClickPost}>
+          Click to add store
+        </ButtonComponent>
+      </div>
+
+      {data.length ? (
+        <ul
+          style={{
+            listStyle: 'none',
+            width: '100%',
+            padding: '0',
+            display: 'flex',
+            flexWrap: 'wrap',
+          }}
+        >
+          {data.map((item, index) => (
+            <li
+              style={{
+                display: 'flex',
+                background: 'green',
+                padding: '10px',
+                margin: '10px',
+              }}
+              key={index}
+            >
+              {item?.name}
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </>
   );
 };

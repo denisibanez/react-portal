@@ -8,9 +8,8 @@ axiosApiInstance.interceptors.request.use(
     const token = localStorage.getItem('ACCESS_TOKEN')
       ? localStorage.getItem('ACCESS_TOKEN')
       : null;
-    const loggedIn = token ? JSON.parse(token).accessToken : null;
-    if (loggedIn) {
-      config.headers.Authorization = `Bearer ${loggedIn}`;
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },

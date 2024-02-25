@@ -10,7 +10,7 @@ export interface RequestParams {
 }
 
 // SERVICE
-import { CustomService } from '../index';
+import { CustomService } from '@/services/index';
 
 export default async function dynamicService(params: RequestParams) {
   if (params.loading) {

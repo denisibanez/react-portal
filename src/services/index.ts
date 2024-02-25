@@ -1,6 +1,6 @@
-import { ExampleService } from './template/example.service';
+import { ExampleService } from '@/services/template/example.service';
 //@ts-ignore
-import authService from './auth/auth.service';
-import { CustomService } from './template/dynamic.service';
+import authService from '@/services/auth/auth.service';
+import { CustomService } from '@/services/template/dynamic.service';
 
 export { ExampleService, authService, CustomService };

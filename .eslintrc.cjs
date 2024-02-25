@@ -24,7 +24,8 @@ module.exports = {
     'react/jsx-no-target-blank': 'off',
     'react/no-direct-mutation-state': 'off',
     'react/prop-types': 'off',
-    'react/require-render-return': 'off'
+    'react/require-render-return': 'off',
+    "react/react-in-jsx-scope": "off",
   },
   settings: {
     react: {
