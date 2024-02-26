@@ -9,6 +9,9 @@ import router from '@/routes/router';
 import { Provider } from 'react-redux';
 import store from '@/store/index';
 
+// Language
+import '@/locations/index';
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
