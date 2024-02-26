@@ -51,7 +51,10 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
                   {lngs &&
                     Object.keys(lngs).map((lng) => {
                       return (
-                        <div style={{ margin: '10px', display: 'inline' }} key={lng}>
+                        <div
+                          style={{ margin: '10px', display: 'inline' }}
+                          key={lng}
+                        >
                           <ButtonComponent
                             onClick={() => i18n.changeLanguage(lng)}
                           >
