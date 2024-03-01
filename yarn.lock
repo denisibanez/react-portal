@@ -333,10 +333,10 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@denisibanez/react-ds@0.0.4":
-  version "0.0.4"
-  resolved "https://npm.pkg.github.com/download/@denisibanez/react-ds/0.0.4/5684ea497ca69b60f200efff6e5a4f81fb976a73#5684ea497ca69b60f200efff6e5a4f81fb976a73"
-  integrity sha512-chWULc6F81Dy+vx/4q3kUCNui1uGapr7ledRcPau63/cpq1pljWxfPFOKIy4xypbO0yD+R10D2m4dRQi08Ql5w==
+"@denisibanez/react-ds@0.0.5":
+  version "0.0.5"
+  resolved "https://npm.pkg.github.com/download/@denisibanez/react-ds/0.0.5/e7dba11c90313e16c39b2e479fe5fceba2eaaa1f#e7dba11c90313e16c39b2e479fe5fceba2eaaa1f"
+  integrity sha512-9pZ7Z5rrFgKckC4S3iBNuglvh46VihUiaZt9DqGzzuBt1c6CpQ2ItZ+dg1cMGRvzc6E1QRWBazJFZYL2nkkXWQ==
   dependencies:
     "@emotion/react" "^11.11.3"
     "@emotion/styled" "^11.11.0"

@@ -24,12 +24,14 @@ const Home: React.FC = () => {
   const [data, setData] = useState([]);
   // Store
   const postsSt = useSelector((state) => state.posts);
+  const loader = useSelector((state) => state.loader.control);
   const dispatch = useDispatch();
   const post = 'hello';
 
   // Translate
   const { t } = useTranslation();
 
+  // Methods
   const getData = async () => {
     const urlParams = {
       path: '/v2/pokemon?',
@@ -41,6 +43,12 @@ const Home: React.FC = () => {
       type: 'get',
       url: mountUrl(urlParams),
       loading: true,
+      customSuccessMessage: {
+        model: true,
+        duration: 6000,
+        message: 'Request com sucesso!',
+        severity: 'success',
+      },
     };
 
     const resp = await dynamicService(requestParams);
@@ -51,78 +59,103 @@ const Home: React.FC = () => {
     dispatch(addPost(post));
   };
 
+  // Lifecycle
   useEffect(() => {
     // if you need get data in created component
     // getData();
   }, []);
 
+  // Template
   return (
     <>
-      <Grid container spacing={2}>
-        <Grid item md={12}>
-          <h1>Vite + React</h1>
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </Grid>
+      {!loader && (
+        <Grid container spacing={2} style={{ margin: '16px 0' }}>
+          <Grid item md={6}>
+            <Paper
+              elevation={3}
+              style={{ padding: '20px' }}
+              className="flex justify-between"
+            >
+              <div className="flex">
+                <img
+                  src={viteLogo}
+                  style={{ minWidth: '60px' }}
+                  className="logo"
+                  alt="Vite logo"
+                />
+                <img
+                  src={reactLogo}
+                  style={{ minWidth: '60px' }}
+                  className="logo react"
+                  alt="React logo"
+                />
+              </div>
 
-        <Grid item md={6}>
-          <Paper elevation={3} style={{ padding: '20px' }}>
-            <h2>Store</h2>
-            {postsSt.map((item, index) => (
-              <div key={index}>{item}</div>
-            ))}
-            <ButtonComponent onClick={handleClickPost}>
-              add store
-            </ButtonComponent>
-          </Paper>
-        </Grid>
-
-        <Grid item md={6}>
-          <Paper elevation={3} style={{ padding: '20px' }}>
-            <h2>Traducoes</h2> <br></br>
-            {t('key')}
-          </Paper>
-        </Grid>
-
-        <Grid item md={12}>
-          <h1>Simple Hooks State</h1>
-          <ButtonComponent onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </ButtonComponent>
-        </Grid>
-
-        <Grid item md={12}>
-          <div className="card">
-            <h1> Get Data From Back</h1>
-            <Button onClick={getData}>get data</Button>
-            {data.length ? (
-              <ul
-                style={{
-                  listStyle: 'none',
-                  width: '100%',
-                  padding: '0',
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                }}
-              >
-                {data.map((item, index) => (
-                  <li
-                    style={{
-                      display: 'flex',
-                      background: 'green',
-                      padding: '10px',
-                      margin: '10px',
-                    }}
-                    key={index}
-                  >
-                    {item?.name}
-                  </li>
+              <div>
+                <h1>Store</h1>
+                {postsSt.map((item, index) => (
+                  <ul className="flex" key={index}>
+                    <li>{item}</li>
+                  </ul>
                 ))}
-              </ul>
-            ) : null}
-          </div>
+                <ButtonComponent onClick={handleClickPost}>
+                  add store
+                </ButtonComponent>
+              </div>
+            </Paper>
+          </Grid>
+
+          <Grid item md={6}>
+            <Paper elevation={3} style={{ padding: '20px' }}>
+              <h2>Traducoes</h2> <br></br>
+              {t('key')}
+            </Paper>
+          </Grid>
+
+          <Grid item md={6} style={{ margin: '16px 0' }}>
+            <Paper elevation={3} style={{ padding: '20px' }}>
+              <h1>Simple Hooks State</h1>
+              <ButtonComponent onClick={() => setCount((count) => count + 1)}>
+                count is {count}
+              </ButtonComponent>
+            </Paper>
+          </Grid>
+
+          <Grid item md={6} style={{ margin: '16px 0' }}>
+            <Paper elevation={3} style={{ padding: '20px' }}>
+              <div className="card">
+                <h1> Get Data From Back</h1>
+                <Button onClick={getData}>get data</Button>
+                {data.length ? (
+                  <ul
+                    style={{
+                      listStyle: 'none',
+                      width: '100%',
+                      padding: '0',
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                    }}
+                  >
+                    {data.map((item, index) => (
+                      <li
+                        style={{
+                          display: 'flex',
+                          background: 'green',
+                          padding: '10px',
+                          margin: '10px',
+                        }}
+                        key={index}
+                      >
+                        {item?.name}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            </Paper>
+          </Grid>
         </Grid>
-      </Grid>
+      )}
     </>
   );
 };

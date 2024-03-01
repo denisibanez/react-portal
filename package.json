@@ -13,7 +13,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@denisibanez/react-ds": "0.0.4",
+    "@denisibanez/react-ds": "0.0.5",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@material-ui/core": "^4.12.4",

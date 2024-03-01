@@ -3,13 +3,23 @@ import React, { ReactNode } from 'react';
 // Router
 import { Outlet, useNavigate } from 'react-router-dom';
 // Components
-import { ButtonComponent } from '@denisibanez/react-ds';
+import {
+  ButtonComponent,
+  HeaderComponent,
+  LoaderComponent,
+  SnackbarComponent,
+} from '@denisibanez/react-ds';
 // Translate
 import { useTranslation } from 'react-i18next';
+// Store
+import { useSelector } from 'react-redux';
 
 // Style
 import './Layout.scss';
 import { Grid, Paper } from '@mui/material';
+
+import PortugalFlag from '@/assets/img/Portugal.svg';
+import EuaFlag from '@/assets/img/en.png';
 
 interface LayoutInterface {
   children?: ReactNode;
@@ -20,8 +30,13 @@ interface LangSelectorInterface {
   ptBr: unknown;
 }
 
+const menuItems = ['home', 'about'];
+const appName = 'Vite + React';
+const buttonLabel = 'Login';
+
 const Layout: React.FC<LayoutInterface> = ({ children }) => {
   const navigate = useNavigate();
+
   const lngs: LangSelectorInterface = {
     en: {
       nativeName: 'en',
@@ -34,63 +49,84 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
   // Translate
   const { i18n } = useTranslation();
 
+  // Store
+  const snackbar = useSelector((state) => state.snackbar.control);
+  const loader = useSelector((state) => state.loader.control);
+
+  // Methods
+  function controlLanguage(lng: string) {
+    i18n.changeLanguage(lng);
+  }
+
+  // Template
   return (
     <>
-      <div className="layout__wrapper">
-        <Grid container spacing={2}>
-          <Grid item md={6}>
-            <Paper elevation={3} style={{ padding: '10px' }}>
-              <div
-                className="layout__translations"
-                style={{ display: 'flex', flexDirection: 'column' }}
-              >
-                <>
-                  <div>
-                    <h2>Linguagem</h2>
+      {/* Header */}
+      {!loader && (
+        <HeaderComponent
+          menuItems={menuItems}
+          appName={appName}
+          buttonLabel={buttonLabel}
+        />
+      )}
+
+      <div className={!loader ? 'layout__wrapper' : ''}>
+        {!loader && (
+          <Grid container spacing={2}>
+            <Grid item md={12}>
+              <Paper elevation={3} style={{ padding: '10px' }} className="flex">
+                {/* Menu */}
+                <div className="layout__buttons">
+                  <div style={{ margin: '10px' }}>
+                    <ButtonComponent onClick={() => navigate('/')}>
+                      HOME
+                    </ButtonComponent>
                   </div>
+                  <div style={{ margin: '10px' }}>
+                    <ButtonComponent onClick={() => navigate('/sobre')}>
+                      SOBRE
+                    </ButtonComponent>
+                  </div>
+                </div>
+
+                {/* Translation */}
+                <div className="layout__selectLanguage flex justify-end">
                   {lngs &&
                     Object.keys(lngs).map((lng) => {
                       return (
-                        <div
-                          style={{ margin: '10px', display: 'inline' }}
-                          key={lng}
-                        >
-                          <ButtonComponent
-                            onClick={() => i18n.changeLanguage(lng)}
-                          >
-                            {lng}
-                          </ButtonComponent>
+                        <div key={lng}>
+                          <img
+                            src={lng === 'en' ? EuaFlag : PortugalFlag}
+                            className="cursor-pointer img-wrapper"
+                            onClick={() => controlLanguage(lng)}
+                          />
                         </div>
                       );
                     })}
-                </>
-              </div>
-            </Paper>
-          </Grid>
-
-          <Grid item md={6}>
-            <Paper elevation={3} style={{ padding: '20px' }}>
-              <div>
-                <h2>Menu</h2>
-              </div>
-              <div className="layout__buttons" style={{ display: 'inline' }}>
-                <div style={{ margin: '10px' }}>
-                  <ButtonComponent onClick={() => navigate('/')}>
-                    HOME
-                  </ButtonComponent>
                 </div>
-                <div style={{ margin: '10px' }}>
-                  <ButtonComponent onClick={() => navigate('/sobre')}>
-                    SOBRE
-                  </ButtonComponent>
-                </div>
-                <div></div>
-              </div>
-            </Paper>
+              </Paper>
+            </Grid>
           </Grid>
-        </Grid>
+        )}
         {children ?? <Outlet />}
       </div>
+
+      {/* LOADER*/}
+      {loader && (
+        <div className="layout__wrapper">
+          <h1>Carregando...</h1>
+          <LoaderComponent></LoaderComponent>
+        </div>
+      )}
+
+      {/* SNACKBAR */}
+
+      <SnackbarComponent
+        model={snackbar.model}
+        closeSnackbar={() => {}}
+        message={snackbar.message}
+        severity={snackbar.severity}
+      ></SnackbarComponent>
     </>
   );
 };
