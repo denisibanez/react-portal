@@ -23,8 +23,8 @@ const Home: React.FC = () => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState([]);
   // Store
-  const postsSt = useSelector((state) => state.posts);
-  const loader = useSelector((state) => state.loader.control);
+  const postsSt = useSelector((state: any) => state.posts);
+  const loader = useSelector((state: any) => state.loader.control);
   const dispatch = useDispatch();
   const post = 'hello';
 
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
 
               <div>
                 <h1>Store</h1>
-                {postsSt.map((item, index) => (
+                {postsSt.map((item: any, index: number) => (
                   <ul className="flex" key={index}>
                     <li>{item}</li>
                   </ul>
@@ -136,7 +136,7 @@ const Home: React.FC = () => {
                       flexWrap: 'wrap',
                     }}
                   >
-                    {data.map((item, index) => (
+                    {data.map((item: any, index: number) => (
                       <li
                         style={{
                           display: 'flex',

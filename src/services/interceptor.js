@@ -24,7 +24,7 @@ axiosApiInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     console.log(error, 'statusCode error');
-    
+
     if (error.response.status === 403 || error.response.status === 401) {
       //SNACKBAR_DISPATCH
       const control = {

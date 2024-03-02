@@ -26,6 +26,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/require-render-return': 'off',
     "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   },
   settings: {
     react: {

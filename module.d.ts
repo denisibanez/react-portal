@@ -1,5 +1,7 @@
 declare module '@/services/plugins/request';
 declare module '@/services/interceptor';
+declare module '@/services/template/dynamicInjection.service';
+declare module '@/services/template/example.service';
 declare module '@/services/plugins/dynamicInjection.service';
 declare module '@/services/index';
 declare module '@/utils/mountParams.utils';
@@ -13,3 +15,6 @@ declare module '@/views/about/About';
 declare module '@/routes/router';
 declare module '@/routes/guard';
 declare module '@/store/reducers/snackbar/snackbar.store';
+declare module '@/services/template/dynamic.service';
+declare module '@/components/button/Button';
+declare module '@/views/login/Login';

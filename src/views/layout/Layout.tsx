@@ -50,8 +50,8 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
   const { i18n } = useTranslation();
 
   // Store
-  const snackbar = useSelector((state) => state.snackbar.control);
-  const loader = useSelector((state) => state.loader.control);
+  const snackbar = useSelector((state: any) => state.snackbar.control);
+  const loader = useSelector((state: any) => state.loader.control);
 
   // Methods
   function controlLanguage(lng: string) {
