@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { setLoader } from '@/store/reducers/loader/loader.store';
 import { setSnackbar } from '@/store/reducers/snackbar/snackbar.store';
 import store from '@/store/index';
@@ -6,17 +5,10 @@ import store from '@/store/index';
 // SERVICE
 import { CustomService } from '@/services/index';
 
-export interface RequestParams {
-  type: string;
-  url: string;
-  payload?: any;
-  loading?: boolean | null | undefined;
-  customSuccessMessage?: string | any;
-  customErrorMessage?: string | any;
-  headers?: any;
-}
+// Types
+import { RequestInterface, ControlSnackbarInterface } from '../../models';
 
-export default async function dynamicService(params: RequestParams) {
+export default async function dynamicService(params: RequestInterface) {
   if (params.loading) {
     // LOADING_DISPATCH
     store.dispatch(setLoader(true));
@@ -29,7 +21,7 @@ export default async function dynamicService(params: RequestParams) {
         const { model, duration, message, severity } =
           params.customSuccessMessage;
         // SNACKBAR_DISPATCH
-        const control: any = {
+        const control: ControlSnackbarInterface = {
           model,
           duration,
           message,
@@ -44,7 +36,7 @@ export default async function dynamicService(params: RequestParams) {
     (e: any) => {
       console.log(e, 'ERROR');
       // SNACKBAR_DISPATCH
-      const control: any = {
+      const control: ControlSnackbarInterface = {
         model: true,
         duration: 6000,
         message: e.message || params.customErrorMessage || 'Error!',

@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { ControlLoaderInterface } from '../../../models';
 
-const initialState = {
+const initialState: ControlLoaderInterface = {
   control: false,
 };
 

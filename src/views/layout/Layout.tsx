@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 // Router
-import { Outlet, useNavigate } from 'react-router-dom';
+import { NavigateFunction, Outlet, useNavigate } from 'react-router-dom';
 // Components
 import {
   ButtonComponent,
@@ -18,24 +18,21 @@ import { useSelector } from 'react-redux';
 import './Layout.scss';
 import { Grid, Paper } from '@mui/material';
 
+// Types
+import { LayoutInterface, LangSelectorInterface } from './Layout.model';
+
+import { LoaderInterface, SnackbarInterfaceProps } from '../../models';
+
+// Variables
 import PortugalFlag from '@/assets/img/Portugal.svg';
 import EuaFlag from '@/assets/img/en.png';
 
-interface LayoutInterface {
-  children?: ReactNode;
-}
-
-interface LangSelectorInterface {
-  en: unknown;
-  ptBr: unknown;
-}
-
-const menuItems = ['home', 'about'];
-const appName = 'Vite + React';
-const buttonLabel = 'Login';
+const menuItems: string[] = ['home', 'about'];
+const appName: string = 'Vite + React';
+const buttonLabel: string = 'Sair';
 
 const Layout: React.FC<LayoutInterface> = ({ children }) => {
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
 
   const lngs: LangSelectorInterface = {
     en: {
@@ -47,11 +44,13 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
   };
 
   // Translate
-  const { i18n } = useTranslation();
+  const { i18n: i18n } = useTranslation();
 
   // Store
-  const snackbar = useSelector((state: any) => state.snackbar.control);
-  const loader = useSelector((state: any) => state.loader.control);
+  const snackbar = useSelector(
+    (state: SnackbarInterfaceProps) => state.snackbar.control
+  );
+  const loader = useSelector((state: LoaderInterface) => state.loader.control);
 
   // Methods
   function controlLanguage(lng: string) {

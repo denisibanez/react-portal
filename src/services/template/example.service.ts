@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import request from '@/services/plugins/request';
 
 export class ExampleService {

@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { SnackbarInterface } from '../../../models';
 
-const initialState = {
+const initialState: SnackbarInterface = {
   control: {
     model: false,
     duration: 6000,

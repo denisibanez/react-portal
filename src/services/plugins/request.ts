@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import axiosApiInstance from '@/services/interceptor';
 
 type Methods = 'head' | 'options' | 'put' | 'post' | 'patch' | 'delete' | 'get';

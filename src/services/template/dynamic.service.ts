@@ -1,19 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import request from '@/services/plugins/request';
 
-export interface RequestParams {
-  type: string;
-  url: string;
-  payload?: any;
-  loading?: boolean | null | undefined;
-  customSuccessMessage?: string | null;
-  customErrorMessage?: string | null;
-  headers?: any;
-}
+// Types
+import { RequestInterface } from '../../models';
 
 export class CustomService {
   static customServiceMethod(
-    params: RequestParams,
+    params: RequestInterface,
     success?: (response: any) => void,
     error?: (e: any) => void,
     done?: (() => void) | undefined

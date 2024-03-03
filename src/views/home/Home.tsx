@@ -15,31 +15,44 @@ import dynamicService from '@/services/plugins/dynamicInjection.service';
 // Translate
 import { useTranslation } from 'react-i18next';
 
+//Types
+import {
+  LoaderInterface,
+  PostInterface,
+  UrlParamsInterface,
+  RequestInterface,
+} from '../../models';
+
 // Assets
 import reactLogo from '@/assets/react.svg';
 import viteLogo from '@/assets/vite.svg';
+import { Dispatch, UnknownAction } from '@reduxjs/toolkit';
 
 const Home: React.FC = () => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState([]);
   // Store
-  const postsSt = useSelector((state: any) => state.posts);
-  const loader = useSelector((state: any) => state.loader.control);
-  const dispatch = useDispatch();
-  const post = 'hello';
+  const postsSt: string[] = useSelector((state: PostInterface) => state.posts);
+  const loader: boolean = useSelector(
+    (state: LoaderInterface) => state.loader.control
+  );
+  const dispatch: Dispatch<UnknownAction> = useDispatch();
+
+  const post: string = 'hello';
 
   // Translate
   const { t } = useTranslation();
 
   // Methods
   const getData = async () => {
-    const urlParams = {
+    const urlParams: UrlParamsInterface = {
       path: '/v2/pokemon?',
       params: {
         id: 1,
       },
     };
-    const requestParams = {
+
+    const requestParams: RequestInterface = {
       type: 'get',
       url: mountUrl(urlParams),
       loading: true,
