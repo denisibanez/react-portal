@@ -65,7 +65,6 @@ function LoginComponent() {
           <img
             src={reactLogo}
             style={{ width: '60px' }}
-            className="logo react"
             alt="React logo"
           />
         </div>
