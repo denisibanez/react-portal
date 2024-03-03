@@ -1,0 +1,23 @@
+.login {
+  &__wrapper {
+    min-height: 100vh;
+    background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  }
+
+  &__image {
+    margin: 0 0 025px;
+  }
+
+  &__box {
+    max-width: 350px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    min-height: 250px;
+
+    div {
+      width: 100%;
+    }
+  }
+}

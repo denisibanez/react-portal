@@ -1,0 +1,17 @@
+@mixin font-format(
+  $size: 16px,
+  $color: #282b4a,
+  $spacing: 0.46px,
+  $line-height: 22px,
+  $weight: normal,
+  $transform: none,
+  $family: 'Sora'
+) {
+  font-family: $family, Helvetica, Arial, sans-serif;
+  font-size: $size;
+  color: $color;
+  letter-spacing: $spacing;
+  line-height: $line-height;
+  font-weight: $weight;
+  text-transform: $transform;
+}
