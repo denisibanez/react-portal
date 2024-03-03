@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import '@/Button.scss';
+import './Button.scss';
 
 interface ButtonProps {
   onClick: () => void;
