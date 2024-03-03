@@ -94,8 +94,11 @@ function LoginComponent() {
   );
 }
 
+interface CustomHelperTextInterface {
+  value: string;
+}
 // Custom Validator
-const CustomHelperText = ({ value }) => {
+const CustomHelperText: React.FC<CustomHelperTextInterface> = ({ value }) => {
   console.log(useFormControl());
   const { error, required, filled } = useFormControl() || {};
   let message = null;
