@@ -2,6 +2,7 @@ import React from 'react';
 
 // Router
 import { NavigateFunction, Outlet, useNavigate } from 'react-router-dom';
+
 // Components
 import {
   ButtonComponent,
@@ -9,6 +10,9 @@ import {
   LoaderComponent,
   SnackbarComponent,
 } from '@denisibanez/react-ds';
+
+import { Grid, Paper } from '@mui/material';
+
 // Translate
 import { useTranslation } from 'react-i18next';
 // Store
@@ -16,11 +20,9 @@ import { useSelector } from 'react-redux';
 
 // Style
 import './Layout.scss';
-import { Grid, Paper } from '@mui/material';
 
 // Types
 import { LayoutInterface, LangSelectorInterface } from './Layout.model';
-
 import { LoaderInterface, SnackbarInterfaceProps } from '../../models';
 
 // Variables

@@ -22,11 +22,14 @@ import {
   UrlParamsInterface,
   RequestInterface,
 } from '../../models';
+import { Dispatch, UnknownAction } from '@reduxjs/toolkit';
 
 // Assets
 import reactLogo from '@/assets/react.svg';
 import viteLogo from '@/assets/vite.svg';
-import { Dispatch, UnknownAction } from '@reduxjs/toolkit';
+
+//Styles
+import './Home.scss';
 
 const Home: React.FC = () => {
   const [count, setCount] = useState(0);
