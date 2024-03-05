@@ -16,7 +16,7 @@ import { Grid, Paper } from '@mui/material';
 // Translate
 import { useTranslation } from 'react-i18next';
 // Store
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // Style
 import './Layout.scss';
@@ -28,6 +28,8 @@ import { LoaderInterface, SnackbarInterfaceProps } from '../../models';
 // Variables
 import PortugalFlag from '@/assets/img/Portugal.svg';
 import EuaFlag from '@/assets/img/en.png';
+import { Dispatch, UnknownAction } from '@reduxjs/toolkit';
+import { setSnackbar } from '@/store/reducers/snackbar/snackbar.store';
 
 const menuItems: string[] = ['home', 'about'];
 const appName: string = 'Vite + React';
@@ -45,6 +47,8 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
     },
   };
 
+  const dispatch: Dispatch<UnknownAction> = useDispatch();
+
   // Translate
   const { i18n: i18n } = useTranslation();
 
@@ -59,6 +63,15 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
     i18n.changeLanguage(lng);
   }
 
+  function handleLogoff() {
+    localStorage.removeItem('ACCESS_TOKEN');
+    navigate('/login');
+  }
+
+  function onNavigate(value: string) {
+    navigate(value === 'home' ? '' : value);
+  }
+
   // Template
   return (
     <>
@@ -68,6 +81,8 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
           menuItems={menuItems}
           appName={appName}
           buttonLabel={buttonLabel}
+          navigateFn={(value) => onNavigate(value)}
+          buttonFn={() => handleLogoff()}
         />
       )}
 
@@ -121,10 +136,18 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
       )}
 
       {/* SNACKBAR */}
-
       <SnackbarComponent
         model={snackbar.model}
-        closeSnackbar={() => {}}
+        closeSnackbar={() =>
+          dispatch(
+            setSnackbar({
+              model: false,
+              duration: 6000,
+              message: '',
+              severity: '',
+            })
+          )
+        }
         message={snackbar.message}
         severity={snackbar.severity}
       ></SnackbarComponent>
