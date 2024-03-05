@@ -5,7 +5,6 @@ import { NavigateFunction, Outlet, useNavigate } from 'react-router-dom';
 
 // Components
 import {
-  ButtonComponent,
   HeaderComponent,
   LoaderComponent,
   SnackbarComponent,
@@ -31,7 +30,7 @@ import EuaFlag from '@/assets/img/en.png';
 import { Dispatch, UnknownAction } from '@reduxjs/toolkit';
 import { setSnackbar } from '@/store/reducers/snackbar/snackbar.store';
 
-const menuItems: string[] = ['home', 'about'];
+const menuItems: string[] = ['home', 'sobre'];
 const appName: string = 'Vite + React';
 const buttonLabel: string = 'Sair';
 
@@ -72,6 +71,17 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
     navigate(value === 'home' ? '' : value);
   }
 
+  function handleClose() {
+    dispatch(
+      setSnackbar({
+        model: false,
+        duration: 6000,
+        message: '',
+        severity: '',
+      })
+    )
+  }
+
   // Template
   return (
     <>
@@ -86,25 +96,11 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
         />
       )}
 
-      <div className={!loader ? 'layout__wrapper' : ''}>
+      <div className={!loader ? 'layout__wrapper items-start flex' : ''}>
         {!loader && (
           <Grid container spacing={2}>
             <Grid item md={12}>
               <Paper elevation={3} style={{ padding: '10px' }} className="flex">
-                {/* Menu */}
-                <div className="layout__buttons">
-                  <div style={{ margin: '10px' }}>
-                    <ButtonComponent onClick={() => navigate('/')}>
-                      HOME
-                    </ButtonComponent>
-                  </div>
-                  <div style={{ margin: '10px' }}>
-                    <ButtonComponent onClick={() => navigate('/sobre')}>
-                      SOBRE
-                    </ButtonComponent>
-                  </div>
-                </div>
-
                 {/* Translation */}
                 <div className="layout__selectLanguage flex justify-end">
                   {lngs &&
@@ -138,16 +134,7 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
       {/* SNACKBAR */}
       <SnackbarComponent
         model={snackbar.model}
-        closeSnackbar={() =>
-          dispatch(
-            setSnackbar({
-              model: false,
-              duration: 6000,
-              message: '',
-              severity: '',
-            })
-          )
-        }
+        closeSnackbar={handleClose}
         message={snackbar.message}
         severity={snackbar.severity}
       ></SnackbarComponent>
