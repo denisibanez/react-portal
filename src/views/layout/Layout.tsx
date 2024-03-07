@@ -79,7 +79,7 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
         message: '',
         severity: '',
       })
-    )
+    );
   }
 
   // Template

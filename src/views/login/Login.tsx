@@ -16,7 +16,6 @@ import reactLogo from '../../assets/react.svg';
 // Types
 import { IFormInput } from './Login.model';
 
-
 // Login Wrapper
 const Login: React.FC = () => {
   const auth = localStorage.getItem('ACCESS_TOKEN');
