@@ -1,5 +1,21 @@
 {
   "translation": {
-    "key": "Hello World"
+    "key": "Hello World",
+    "loading": "Loading...",
+    "logoff": "Logoff",
+    "home": "Home",
+    "about": "About",
+    "notFound": "Page not found",
+    "login": "Login",
+    "user": "User",
+    "password": "Password",
+    "required": "Campo obrigatório.",
+    "max5": "Maximum 5 characters",
+    "store": "Global state management",
+    "translations": "Translations",
+    "getData": "Download data from server",
+    "hooks": "Simple state management",
+    "addStore": "Add",
+    "requestSuccess": "Request success!"
   }
 }
