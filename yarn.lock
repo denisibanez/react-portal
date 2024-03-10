@@ -333,10 +333,10 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@denisibanez/react-ds@0.0.5":
-  version "0.0.5"
-  resolved "https://npm.pkg.github.com/download/@denisibanez/react-ds/0.0.5/e7dba11c90313e16c39b2e479fe5fceba2eaaa1f#e7dba11c90313e16c39b2e479fe5fceba2eaaa1f"
-  integrity sha512-9pZ7Z5rrFgKckC4S3iBNuglvh46VihUiaZt9DqGzzuBt1c6CpQ2ItZ+dg1cMGRvzc6E1QRWBazJFZYL2nkkXWQ==
+"@denisibanez/react-ds@0.1.5":
+  version "0.1.5"
+  resolved "https://npm.pkg.github.com/download/@denisibanez/react-ds/0.1.5/bb200c5ca7b47210cb255526678eb952ee3837c3#bb200c5ca7b47210cb255526678eb952ee3837c3"
+  integrity sha512-9a8ViSSNqfdsAV/HhW2k9DyCboPjAn+UBmpSSg+eAawNqFoh+ALS354S8Jdw14KEmax4wWVLzEbruYSyCJRDUg==
   dependencies:
     "@emotion/react" "^11.11.3"
     "@emotion/styled" "^11.11.0"
@@ -1052,6 +1052,19 @@
     clsx "^2.1.0"
     prop-types "^15.8.1"
 
+"@mui/base@^5.0.0-beta.22":
+  version "5.0.0-beta.38"
+  resolved "https://registry.yarnpkg.com/@mui/base/-/base-5.0.0-beta.38.tgz#0d79c1158d18d9decfc8fa3ab87b4830a49cf952"
+  integrity sha512-AsjD6Y1X5A1qndxz8xCcR8LDqv31aiwlgWMPxFAX/kCKiIGKlK65yMeVZ62iQr/6LBz+9hSKLiD1i4TZdAHKcQ==
+  dependencies:
+    "@babel/runtime" "^7.23.9"
+    "@floating-ui/react-dom" "^2.0.8"
+    "@mui/types" "^7.2.13"
+    "@mui/utils" "^5.15.12"
+    "@popperjs/core" "^2.11.8"
+    clsx "^2.1.0"
+    prop-types "^15.8.1"
+
 "@mui/core-downloads-tracker@^5.15.10":
   version "5.15.10"
   resolved "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-5.15.10.tgz"
@@ -1061,6 +1074,13 @@
   version "5.15.10"
   resolved "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.15.10.tgz"
   integrity sha512-9cF8oUHZKo9oQ7EQ3pxPELaZuZVmphskU4OI6NiJNDVN7zcuvrEsuWjYo1Zh4fLiC39Nrvm30h/B51rcUjvSGA==
+  dependencies:
+    "@babel/runtime" "^7.23.9"
+
+"@mui/icons-material@^5.15.12":
+  version "5.15.12"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.15.12.tgz#30638c5dd4d40ecabea1579bbfa7394565c54474"
+  integrity sha512-3BXiDlOd3AexZoEXa/VqpIpVIvosCzjLHsdMWzKMXbZdnBiJjmb9ECdqfjn5SpTClO49qvkKLhkTqdBH3fSFGw==
   dependencies:
     "@babel/runtime" "^7.23.9"
 
@@ -1120,6 +1140,16 @@
   resolved "https://registry.npmjs.org/@mui/types/-/types-7.2.13.tgz"
   integrity sha512-qP9OgacN62s+l8rdDhSFRe05HWtLLJ5TGclC9I1+tQngbssu0m2dmFZs+Px53AcOs9fD7TbYd4gc9AXzVqO/+g==
 
+"@mui/utils@^5.14.16", "@mui/utils@^5.15.12":
+  version "5.15.12"
+  resolved "https://registry.yarnpkg.com/@mui/utils/-/utils-5.15.12.tgz#bd00b678c16b98c543d4c6c560f9c90e6792b2a7"
+  integrity sha512-8SDGCnO2DY9Yy+5bGzu00NZowSDtuyHP4H8gunhHGQoIlhlY2Z3w64wBzAOLpYw/ZhJNzksDTnS/i8qdJvxuow==
+  dependencies:
+    "@babel/runtime" "^7.23.9"
+    "@types/prop-types" "^15.7.11"
+    prop-types "^15.8.1"
+    react-is "^18.2.0"
+
 "@mui/utils@^5.15.9":
   version "5.15.9"
   resolved "https://registry.npmjs.org/@mui/utils/-/utils-5.15.9.tgz"
@@ -1129,6 +1159,19 @@
     "@types/prop-types" "^15.7.11"
     prop-types "^15.8.1"
     react-is "^18.2.0"
+
+"@mui/x-date-pickers@^6.19.6":
+  version "6.19.6"
+  resolved "https://registry.yarnpkg.com/@mui/x-date-pickers/-/x-date-pickers-6.19.6.tgz#79800f81b8d587a52b3b652e142631746b1929dc"
+  integrity sha512-QW9AFcPi0vLpkUhmquhhyhLaBvB0AZJuu3NTrE173qNKx3Z3n51aCLY9bc7c6i4ltZMMsVRHlvzQjsve04TC8A==
+  dependencies:
+    "@babel/runtime" "^7.23.2"
+    "@mui/base" "^5.0.0-beta.22"
+    "@mui/utils" "^5.14.16"
+    "@types/react-transition-group" "^4.4.8"
+    clsx "^2.0.0"
+    prop-types "^15.8.1"
+    react-transition-group "^4.4.5"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -1737,7 +1780,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-transition-group@^4.2.0", "@types/react-transition-group@^4.4.10":
+"@types/react-transition-group@^4.2.0", "@types/react-transition-group@^4.4.10", "@types/react-transition-group@^4.4.8":
   version "4.4.10"
   resolved "https://registry.npmjs.org/@types/react-transition-group/-/react-transition-group-4.4.10.tgz"
   integrity sha512-hT/+s0VQs2ojCX823m60m5f0sL5idt9SO6Tj6Dg+rdphGPIeJbJ6CxvBYkgkGKrYeDjvIpKTR38UzmtHJOGW3Q==
@@ -2653,7 +2696,7 @@ clsx@^1.0.4:
   resolved "https://registry.npmjs.org/clsx/-/clsx-1.2.1.tgz"
   integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
 
-clsx@^2.1.0:
+clsx@^2.0.0, clsx@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/clsx/-/clsx-2.1.0.tgz"
   integrity sha512-m3iNNWpd9rl3jvvcBnu70ylMdrXt8Vlq4HYadnU5fwcOtvkSQWPmj7amUcDT2qYI7risszBjI5AUIUox9D16pg==
@@ -6373,6 +6416,16 @@ react-dom@^18.2.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
+
+react-hook-form-mui@^7.0.0-beta.0:
+  version "7.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form-mui/-/react-hook-form-mui-7.0.0-beta.0.tgz#4356286b418fd58f6f2e41d8a996d569894f694a"
+  integrity sha512-pj+GNsrWtmhS1BhXJdEqSxPcsuZqI2xJ/N/yPMVKT0iVwKPrIzl9MkC564Xtgti3Ucd4fByEmVkUacS4SWHxSA==
+
+react-hook-form@^7.51.0:
+  version "7.51.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.51.0.tgz#757ae71b37c26e00590bd3788508287dcc5ecdaf"
+  integrity sha512-BggOy5j58RdhdMzzRUHGOYhSz1oeylFAv6jUSG86OvCIvlAvS7KvnRY7yoAf2pfEiPN7BesnR0xx73nEk3qIiw==
 
 react-i18next@^14.0.5:
   version "14.0.5"

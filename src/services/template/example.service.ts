@@ -8,7 +8,7 @@ export class ExampleService {
   ) {
     const req: any = {
       method: 'get',
-      url: `${process.env.VITE__BASE_PATH_EXAMPLE}/`,
+      url: `${process.env.VITE__BASE_PATH_EXAMPLE}/v2/pokemon`,
     };
     return request(req, success, error, done);
   }

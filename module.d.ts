@@ -18,3 +18,4 @@ declare module '@/store/reducers/snackbar/snackbar.store';
 declare module '@/services/template/dynamic.service';
 declare module '@/components/button/Button';
 declare module '@/views/login/Login';
+declare module '@/components/translation/Translation';

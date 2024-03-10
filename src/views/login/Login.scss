@@ -16,8 +16,19 @@
     border-radius: 8px;
     min-height: 250px;
 
-    div {
+    div,
+    form {
       width: 100%;
+    }
+
+    form {
+      display: inline-flex;
+      flex-direction: column;
+
+      div,
+      button {
+        margin: 2px 0;
+      }
     }
   }
 }
