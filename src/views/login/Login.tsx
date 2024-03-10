@@ -106,9 +106,10 @@ function LoginComponent() {
 
   return (
     <>
-      {/* Translation */}
+      <div data-testid="login">
+              {/* Translation */}
       <TranslationComponent />
-      <div className="login__wrapper flex justify-center items-center">
+      <div className="login__wrapper flex justify-center items-center" >
         <Stack className="login__box flex items-center">
           <div className="login__image flex justify-center ">
             <img src={reactLogo} style={{ width: '60px' }} alt="React logo" />
@@ -175,6 +176,7 @@ function LoginComponent() {
         message={snackbar.message}
         severity={snackbar.severity}
       ></SnackbarComponent>
+      </div>
     </>
   );
 }

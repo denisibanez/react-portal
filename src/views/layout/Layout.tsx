@@ -82,7 +82,7 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
         />
       )}
 
-      <div className={!loader ? 'layout__wrapper items-start flex' : ''}>
+      <div className={!loader ? 'layout__wrapper items-start flex' : ''} data-testid="layout">
         {!loader && (
           <Grid container spacing={2}>
             <Grid item md={12}>

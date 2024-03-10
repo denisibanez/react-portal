@@ -7,7 +7,11 @@ import './About.scss';
 const About: React.FC = () => {
   // Translate
   const { t } = useTranslation();
-  return <>{t('about')}</>;
+  return <>
+    <div data-testid="about">
+      {t('about')}
+    </div>
+  </>;
 };
 
 export default About;
