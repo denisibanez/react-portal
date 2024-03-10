@@ -85,7 +85,7 @@ const Home: React.FC = () => {
   return (
     <>
       {!loader && (
-        <Grid container spacing={2} style={{ margin: '16px 0' }}>
+        <Grid container spacing={2} style={{ margin: '16px 0' }} data-testid="home">
           <Grid item md={6}>
             <Paper
               elevation={3}

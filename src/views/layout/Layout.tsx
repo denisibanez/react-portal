@@ -67,11 +67,11 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
         <HeaderComponent
           menuItems={menuItems}
           appName={appName}
-          buttonLabel={buttonLabel}
+          buttonLabel={buttonLabel} navigateFn={() => {}}
         />
       )}
 
-      <div className={!loader ? 'layout__wrapper' : ''}>
+      <div className={!loader ? 'layout__wrapper' : ''} data-testid="layout">
         {!loader && (
           <Grid container spacing={2}>
             <Grid item md={12}>

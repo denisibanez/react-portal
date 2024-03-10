@@ -59,7 +59,7 @@ function LoginComponent() {
   };
 
   return (
-    <div className="login__wrapper flex justify-center items-center">
+    <div className="login__wrapper flex justify-center items-center" data-testid="login">
       <Stack className="login__box flex items-center">
         <div className="login__image flex justify-center ">
           <img

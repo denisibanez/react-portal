@@ -4,7 +4,9 @@ import React from 'react';
 import './About.scss';
 
 const About: React.FC = () => {
-  return <>About</>;
+  return <>
+    <div data-testid="about">About</div>
+  </>;
 };
 
 export default About;
