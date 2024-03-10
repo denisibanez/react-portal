@@ -59,14 +59,13 @@ function LoginComponent() {
   };
 
   return (
-    <div className="login__wrapper flex justify-center items-center" data-testid="login">
+    <div
+      className="login__wrapper flex justify-center items-center"
+      data-testid="login"
+    >
       <Stack className="login__box flex items-center">
         <div className="login__image flex justify-center ">
-          <img
-            src={reactLogo}
-            style={{ width: '60px' }}
-            alt="React logo"
-          />
+          <img src={reactLogo} style={{ width: '60px' }} alt="React logo" />
         </div>
         <FormControl error={error} required>
           <InputLabel htmlFor="component-outlined">Name</InputLabel>

@@ -67,7 +67,8 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
         <HeaderComponent
           menuItems={menuItems}
           appName={appName}
-          buttonLabel={buttonLabel} navigateFn={() => {}}
+          buttonLabel={buttonLabel}
+          navigateFn={() => {}}
         />
       )}
 
