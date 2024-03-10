@@ -1,5 +1,21 @@
 {
   "translation": {
-    "key": "Olá Mundo"
+    "key": "Olá Mundo",
+    "loading": "Carregando...",
+    "logoff": "Sair",
+    "home": "Página inicial",
+    "about": "Sobre",
+    "notFound": "Página não encontrada",
+    "login": "Entrar",
+    "user": "Usuário",
+    "password": "Senha",
+    "required": "Campo obrigatório.",
+    "max5": "Máximo de 5 caracteres",
+    "store": "Gerenciamento de estado global",
+    "translations": "Traduções",
+    "getData": "Baixar dados do servidor",
+    "hooks": "Gerenciamento de estado simples",
+    "addStore": "Adicionar",
+    "requestSuccess": "Requisição feita com sucesso!"
   }
 }

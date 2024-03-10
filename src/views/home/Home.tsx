@@ -62,7 +62,7 @@ const Home: React.FC = () => {
       customSuccessMessage: {
         model: true,
         duration: 6000,
-        message: 'Request com sucesso!',
+        message: t('requestSuccess'),
         severity: 'success',
       },
     };
@@ -108,14 +108,14 @@ const Home: React.FC = () => {
               </div>
 
               <div>
-                <h1>Store</h1>
+                <h1>{t('store')}</h1>
                 {postsSt.map((item: any, index: number) => (
                   <ul className="flex" key={index}>
                     <li>{item}</li>
                   </ul>
                 ))}
                 <ButtonComponent onClick={handleClickPost}>
-                  add store
+                  {t('addStore')}
                 </ButtonComponent>
               </div>
             </Paper>
@@ -123,16 +123,16 @@ const Home: React.FC = () => {
 
           <Grid item md={6}>
             <Paper elevation={3} style={{ padding: '20px' }}>
-              <h2>Traducoes</h2> <br></br>
+              <h2>{t('translations')}</h2> <br></br>
               {t('key')}
             </Paper>
           </Grid>
 
           <Grid item md={6} style={{ margin: '16px 0' }}>
             <Paper elevation={3} style={{ padding: '20px' }}>
-              <h1>Simple Hooks State</h1>
+              <h1>{t('hooks')}</h1>
               <ButtonComponent onClick={() => setCount((count) => count + 1)}>
-                count is {count}
+                {count}
               </ButtonComponent>
             </Paper>
           </Grid>
@@ -140,7 +140,7 @@ const Home: React.FC = () => {
           <Grid item md={6} style={{ margin: '16px 0' }}>
             <Paper elevation={3} style={{ padding: '20px' }}>
               <div className="card">
-                <h1> Get Data From Back</h1>
+                <h1> {t('getData')}</h1>
                 <Button onClick={getData}>get data</Button>
                 {data.length ? (
                   <ul

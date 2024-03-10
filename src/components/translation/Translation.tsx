@@ -8,9 +8,7 @@ import PortugalFlag from '@/assets/img/Portugal.svg';
 import EuaFlag from '@/assets/img/en.png';
 
 // Types
-import {
-  LangSelectorInterface,
-} from './Translation.model';
+import { LangSelectorInterface } from './Translation.model';
 
 const TranslationComponent: React.FC = () => {
   const { i18n: i18n } = useTranslation();

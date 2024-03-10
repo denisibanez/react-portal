@@ -24,17 +24,22 @@ import './Layout.scss';
 import { LayoutInterface } from './Layout.model';
 import { LoaderInterface, SnackbarInterfaceProps } from '../../models';
 
-// Variables
+// Store
 import { Dispatch, UnknownAction } from '@reduxjs/toolkit';
-import { setSnackbar } from '@/store/reducers/snackbar/snackbar.store';
+import { setSnackbar } from '@/store/reducers/snackbar/snackbar.store';;
 
-const menuItems: string[] = ['home', 'sobre'];
-const appName: string = 'Vite + React';
-const buttonLabel: string = 'Sair';
+// Translation
+import { useTranslation } from 'react-i18next'
 
 const Layout: React.FC<LayoutInterface> = ({ children }) => {
   const navigate: NavigateFunction = useNavigate();
   const dispatch: Dispatch<UnknownAction> = useDispatch();
+  // Translate
+  const { t } = useTranslation();
+  // Variables
+  const menuItems: string[] = [t('home'), t('about')];
+  const appName: string = 'Vite + React';
+  const buttonLabel: string = t('logoff');
 
   // Store
   const snackbar = useSelector(
@@ -49,7 +54,7 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
   }
 
   function onNavigate(value: string) {
-    navigate(value === 'home' ? '' : value);
+    navigate(value === 'Home' || value === 'Página inicial' ? '' : 'sobre');
   }
 
   function handleClose() {
@@ -94,7 +99,7 @@ const Layout: React.FC<LayoutInterface> = ({ children }) => {
       {/* LOADER*/}
       {loader && (
         <div className="layout__wrapper">
-          <h1>Carregando...</h1>
+          <h1>{t('loading')}</h1>
           <LoaderComponent></LoaderComponent>
         </div>
       )}

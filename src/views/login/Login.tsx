@@ -22,11 +22,12 @@ import { ExampleService } from '../../services';
 
 // Translation
 import TranslationComponent from '@/components/translation/Translation';
+import { useTranslation } from 'react-i18next'
 
 // Store
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch, UnknownAction } from '@reduxjs/toolkit';
-import { setSnackbar } from '@/store/reducers/snackbar/snackbar.store';
+import { setSnackbar } from '@/store/reducers/snackbar/snackbar.store';;
 
 // Login Wrapper
 const Login: React.FC = () => {
@@ -56,6 +57,9 @@ function LoginComponent() {
     (state: SnackbarInterfaceProps) => state.snackbar.control
   );
   const dispatch: Dispatch<UnknownAction> = useDispatch();
+
+  // Translate
+  const { t } = useTranslation();
 
   // MEthods
   function handleClose() {
@@ -113,7 +117,7 @@ function LoginComponent() {
           <form onSubmit={handleSubmit(onSubmit)}>
             <TextField
               type="text"
-              label="Usuário *"
+              label={t('user')}
               variant="outlined"
               placeholder="jhonny@email.com"
               //@ts-ignore
@@ -121,11 +125,11 @@ function LoginComponent() {
               {...register('user', {
                 maxLength: {
                   value: 5,
-                  message: 'Máximo de 5 caracteres',
+                  message: t('max5'),
                 },
                 required: {
                   value: true,
-                  message: 'Campo obrigatório',
+                  message: t('required'),
                 },
               })}
             />
@@ -136,7 +140,7 @@ function LoginComponent() {
 
             <TextField
               type="password"
-              label="Senha *"
+              label={t('password')}
               variant="outlined"
               placeholder="********"
               //@ts-ignore
@@ -144,11 +148,11 @@ function LoginComponent() {
               {...register('password', {
                 maxLength: {
                   value: 5,
-                  message: 'Máximo de 5 caracteres',
+                  message: t('password'),
                 },
                 required: {
                   value: true,
-                  message: 'Campo obrigatório',
+                  message: t('password'),
                 },
               })}
             />
@@ -158,7 +162,7 @@ function LoginComponent() {
             </FormHelperText>
 
             <ButtonComponent loading={loading} type="submit" onClick={() => {}}>
-              Entrar
+              { t('login') }
             </ButtonComponent>
           </form>
         </Stack>
